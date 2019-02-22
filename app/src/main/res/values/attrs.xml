@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DataBindingCstmView">
+        <attr name="itemTitle" format="string|reference" />
+        <attr name="itemContent" format="string|reference" />
+    </declare-styleable>
+
+    <style name="DataBindingCstm_Defaule">
+        <item name="itemTitle">默认Title</item>
+        <item name="itemContent">默认Content</item>
+    </style>
+
+</resources>
