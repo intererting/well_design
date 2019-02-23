@@ -13,13 +13,15 @@ import com.yuliyang.well_design.R
 import kotlinx.android.synthetic.main.cstm_test.view.*
 
 class DataBindingCstmView @JvmOverloads constructor(
-        context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    private val binding: CstmTestBinding = DataBindingUtil.inflate(LayoutInflater.from(context),
-            R.layout.cstm_test,
-            this,
-            true)
+    private val binding: CstmTestBinding = DataBindingUtil.inflate(
+        LayoutInflater.from(context),
+        R.layout.cstm_test,
+        this,
+        true
+    )
 //    private var title: String? = null
 
 
@@ -44,6 +46,10 @@ class DataBindingCstmView @JvmOverloads constructor(
     fun setContent(content: MutableLiveData<String>?) {
         binding.content = content
     }
+
+//    fun setContent(content: MutableLiveData<Person>) {
+//        binding.content = content
+//    }
 
 }
 
