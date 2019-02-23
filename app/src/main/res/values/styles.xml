@@ -9,4 +9,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="HintError" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#ff0000</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
 </resources>

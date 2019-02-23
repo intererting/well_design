@@ -3,7 +3,7 @@ package com.yuliyang.well_design.databinding
 import androidx.lifecycle.MutableLiveData
 
 
-class Person(accountNum: String, password: String) {
+class Person(accountNum: String = "", password: String = "") {
 
     private val accountNum = MutableLiveData<String>()
     private val password = MutableLiveData<String>()

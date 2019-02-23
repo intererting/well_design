@@ -20,9 +20,7 @@ class DataBindingLVActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding_lv)
         binding.setLifecycleOwner(this)
         binding.person = viewmodel.getPerson()
-        setValue.setOnClickListener {
-            viewmodel.getPerson().postValue(Person("yuliyang", "123456"))
-        }
+        viewmodel.getPerson().postValue(Person())
         getValue.setOnClickListener {
             println(viewmodel.getPerson().value)
         }

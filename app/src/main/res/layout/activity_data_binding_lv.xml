@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
-        <import type="com.yuliyang.well_design.databinding.Person"/>
+        <import type="com.yuliyang.well_design.databinding.Person" />
 
         <variable
-                name="person"
-                type="androidx.lifecycle.MutableLiveData&lt;Person>"/>
+            name="person"
+            type="androidx.lifecycle.MutableLiveData&lt;Person>" />
     </data>
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <Button
-                android:id="@+id/setValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="setValue"/>
-
-        <Button
-                android:id="@+id/getValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="getValue"/>
+            android:id="@+id/getValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="getValue" />
 
         <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@={person.accountNum}"
-                android:textSize="20dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={person.accountNum}"
+            android:textSize="20dp" />
 
         <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@={person.password}"
-                android:textSize="20dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={person.password}"
+            android:textSize="20dp" />
 
         <com.yuliyang.well_design.databinding.DataBindingCstmView
-                android:id="@+id/cstmTest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:content="@{person.accountNum}"
-                app:itemTitles='@{"测试title"}'/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:bindTag='@{"accountNum"}'
+            app:content="@{person.accountNum}"
+            app:itemTitles='@{"电话号码"}' />
 
+        <com.yuliyang.well_design.databinding.DataBindingCstmView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:bindTag='@{"pwd"}'
+            app:content="@{person.password}"
+            app:itemTitles='@{"密码"}' />
     </LinearLayout>
 </layout>
