@@ -6,6 +6,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 fun main() {
 
@@ -40,8 +41,8 @@ class Student {
 }
 
 interface TestService {
-    @GET("http://www.baidu.com")
-    fun testBaidu(name: String): Call<ResponseBody>
+    @GET("http://www.baidu.com/{word}")
+    fun testBaidu(@Path("word") name: String): Call<ResponseBody>
 }
 
 class RequestWrapper {
