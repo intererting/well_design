@@ -1,26 +1,43 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlinx-serialization'
 
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'yuliyang'
+            keyPassword 'yuliyang'
+            storeFile file('D:/yuliyang.jks')
+            storePassword 'yuliyang'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.yuliyang.well_design"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a"
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
+        debug {
+            signingConfig signingConfigs.debug
+        }
 
+    }
     dataBinding {
         enabled true
     }
@@ -28,9 +45,16 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    sourceSets {
+        main {
+//            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
+    ext.anko_version = '0.10.8'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
@@ -44,6 +68,9 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     implementation 'androidx.lifecycle:lifecycle-common-java8:2.0.0'
     implementation 'androidx.lifecycle:lifecycle-reactivestreams-ktx:2.0.0'
-    implementation 'com.google.android.material:material:1.0.0-rc01' +
-            ''
+    implementation 'com.google.android.material:material:1.0.0-rc01'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.10.0'
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    implementation files('libs/AMap3DMap_6.7.0_AMapLocation_4.4.0_20190213.jar')
 }
