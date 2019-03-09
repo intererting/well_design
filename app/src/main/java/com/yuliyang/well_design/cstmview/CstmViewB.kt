@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Point
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 
 class CstmViewB @JvmOverloads constructor(
@@ -58,4 +59,7 @@ class CstmViewB @JvmOverloads constructor(
                          var centerY: Float,
                          var x: Float, var y: Float, var isToday: Boolean)
 
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        return super.onTouchEvent(event)
+    }
 }

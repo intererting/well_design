@@ -21,4 +21,9 @@
             android:layout_height="100dp"
             android:background="#f00" />
     </FrameLayout>
+
+    <com.yuliyang.well_design.DragableViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#303"/>
 </LinearLayout>

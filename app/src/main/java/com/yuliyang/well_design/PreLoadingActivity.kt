@@ -24,12 +24,12 @@ class PreLoadingActivity : AppCompatActivity() {
         }
     }
 
-    private fun netWork(): Boolean {
-        GlobalScope.launch(Dispatchers.IO) {
-            println("网络请求")
-            delay(3000)
-            println("网络请求结束")
-        }
-
-    }
+//    private fun netWork(): Boolean {
+//        GlobalScope.launch(Dispatchers.IO) {
+//            println("网络请求")
+//            delay(3000)
+//            println("网络请求结束")
+//        }
+//
+//    }
 }
