@@ -28,6 +28,7 @@ class AutoFitTextureView @JvmOverloads constructor(
     }
 
     override fun onScale(detector: ScaleGestureDetector): Boolean {
+        println(detector.currentSpan)
         scaleListener?.onScaleChange(detector.scaleFactor)
         return false
     }
