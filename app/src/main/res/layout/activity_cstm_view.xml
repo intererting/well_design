@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <com.yuliyang.well_design.cstmview.CstmViewA
-        android:layout_width="match_parent"
-        android:layout_height="70dp" />
+            android:layout_width="match_parent"
+            android:layout_height="70dp"/>
 
     <com.yuliyang.well_design.cstmview.CstmViewB
-        android:layout_width="match_parent"
-        android:layout_height="500px" />
+            android:layout_width="match_parent"
+            android:layout_height="500px"/>
+
+    <com.yuliyang.well_design.xformode.TestView android:layout_width="match_parent"
+                                                android:layout_height="match_parent"/>
 </LinearLayout>
